@@ -37,11 +37,11 @@ function initialPrompt() {
   console.log("Let's play some Scrabble! \n")
 };
 
-let simpleScore = function (word){
+function simpleScore (word){
     return word.length 
   };
 
-let vowelBonusScore = function (word){
+function vowelBonusScore (word){
     word = word.toLowerCase();
     let vowelWorth = 0
     let nonVowel = 0 
@@ -55,7 +55,7 @@ let vowelBonusScore = function (word){
       return nonVowel + vowelWorth;
   };
 
-let scrabbleScore = function (word){
+function scrabbleScore (word){
 word = word.toLowerCase();
 let newScore = 0
 for (let i = 0; i < word.length; i++){ 
