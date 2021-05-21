@@ -65,20 +65,20 @@ return newScore;
 };
 
 	
-const scoringAlgorithms = [ simpleScore = {
+const scoringAlgorithms = [ simple = {
   name: "Simple Score",
   description: "Each letter is worth 1 point.",
-  scorerFunction: simpleScore
+  scoringFunction: simpleScore
 },
 bonusVowels = { 
   name: "Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
 },
 scrabble = {
   name : "Scrabble",
   description: "The traditional scoring algorithm.",
-  scorerFunction: scrabbleScore
+  scoringFunction: scrabbleScore
 }];
 
 function scorerPrompt() { 
