@@ -53,7 +53,7 @@ let vowelBonusScore = function (word){
         }
       }
       return nonVowel + vowelWorth;
-  }
+  };
 
 let scrabbleScore = function (word){
 word = word.toLowerCase();
@@ -88,21 +88,21 @@ let userWord = input.question("Enter a word to score: ")
 for (let i = 0; i < scoringAlgorithms.length; i++){
   console.log(`${i} - ${scoringAlgorithms[i].name}: ${scoringAlgorithms[i].description}`)
 }
-let userInput = Number(input.question(`Enter 0, 1 or 2: `));
- if (userInput === 0){
-   console.log(`Your score for ${userWord} is: ${scoringAlgorithms[0].scorerFunction(userWord)}`);
- } else if (userInput === 1){
-   console.log(`Your score for ${userWord} is: ${scoringAlgorithms[1].scorerFunction(userWord)}`);
- }else if (userInput === 2){ 
-   console.log(`Your score for ${userWord} is: ${scoringAlgorithms[2].scorerFunction(userWord)}`);
- }else{
-   console.log("not a corrcet number choice");
- }
-
-//for (let i = 0; i <= 2; i++){
-//   if (userInput === i){
-//    console.log(`Your score for ${userWord} is: ${scoringAlgorithms[i].scorerFunction(userWord)}`);
-// } 
+for (let i = 0; i < 1; i--){
+ let userInput = Number(input.question(`Enter 0, 1 or 2: `));
+  if (userInput >= 3 || userInput === !Number){
+      console.log("not a corrcet number choice");
+    } else if (userInput === 0){
+    console.log(`Your score for ${userWord} is: ${scoringAlgorithms[0].scorerFunction(userWord)}`);
+    break;
+    } else if (userInput === 1){
+    console.log(`Your score for ${userWord} is: ${scoringAlgorithms[1].scorerFunction(userWord)}`);
+    break;
+    } else if (userInput === 2){ 
+    console.log(`Your score for ${userWord} is: ${scoringAlgorithms[2].scorerFunction(userWord)}`);
+    break;
+    }
+}
 };
 
 function transform (obj){
@@ -125,7 +125,6 @@ function runProgram() {
   console.clear();
   initialPrompt();
   scorerPrompt();
-
 }
 
 // Don't write any code below this line //
@@ -142,4 +141,3 @@ module.exports = {
 	runProgram: runProgram,
 	scorerPrompt: scorerPrompt
 };
-
